@@ -1,0 +1,31 @@
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+table,th,td {
+    border: 1px solid black;
+}
+
+th,td {
+    padding: 8px;
+    text-align: left;
+}
+
+
+.main-content {
+    display: flex;
+}
+
+.form-section {
+    flex: 1;
+    padding-right: 20px;
+}
+
+.history-section {
+    flex: 1;
+    border-left: 1px solid #ccc;
+    padding-left: 20px;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Estudio de Crédito</title>
+</head>
+
+<body>
+    <div class="grid">
+        <label for="valorCredito">Moneda</label>
+        <input class="border-solid border-2 border-gray-200 rounded-sm w-52" type="text" id="moneda">
+        <button class="mt-4 bg-cyan-500 border-2 rounded-sm px-4 text-white font-bold"
+            onclick="conversorMoneda()">Calcular</button>
+
+    </div>
+    <div class="overflow-x-auto">
+        <div class="min-w-screen flex items-center justify-center bg-gray-100">
+            <div class="bg-white w-full">
+                <!-- Contenido que deseas mostrar con scroll lateral -->
+                <div class="flex p-4 space-x-4 overflow-x-scroll" id="estado-monedas">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <h1 class="text-xl m-2">Estudio de Crédito</h1>
+    <div class="main-content flex p-4">
+        <!-- Formulario principal -->
+        <div class="form-section grow">
+            <div class="grid">
+                <div class="grid">
+                    <label for="valorCredito">Valor del crédito:</label>
+                    <input class="border-solid border-2 border-gray-200 rounded-sm w-52" type="text" id="valorCredito"
+                        oninput="formatNumber(this)">
+                </div>
+                <div class="grid">
+                    <label for="plazoMeses">Plazo en meses para el pago:</label>
+                    <input class="border-solid border-2 border-gray-200 rounded-sm w-52" type="number" id="plazoMeses">
+                </div>
+                <div class="grid">
+                    <label for="ingresosMensuales">Ingresos mensuales:</label>
+                    <input class="border-solid border-2 border-gray-200 rounded-sm w-52" type="text"
+                        id="ingresosMensuales" oninput="formatNumber(this)">
+                </div>
+            </div>
+            <button class="mt-4 bg-cyan-500 border-2 rounded-sm px-4 text-white font-bold"
+                onclick="calcularEstudioDeCredito()">Calcular</button>
+            <div id="resultado"></div>
+        </div>
+        <!-- Sección de historial -->
+        <div class="history-section flex-none overflow-y-auto max-h-72">
+            <h2>Historial de Consultas</h2>
+            <button onclick="limpiarHistorial()">Eliminar Historial</button>
+            <div id="historialConsultas">
+                <!-- Contenido del historial aquí -->
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+
+</html>
