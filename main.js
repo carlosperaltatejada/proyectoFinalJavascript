@@ -1,3 +1,8 @@
+Swal.fire(
+    'Terminos para acceder al prestamo',
+    'Tus ingresos deben ser por lo menos el doble del prestamo a solicitar y este no puede tener un plazo superior a 6 meses'
+    )
+
 const options = {method: 'GET'};
 
 function conversorMoneda (){
@@ -37,6 +42,13 @@ function estudioDeCredito(valorDelPrestamo, tiempo, ingresos) {
     const cuotasMensuales = [];
 
     if (valorDelPrestamo > valorMaximoDelPrestamo || tiempo > 6) {
+
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'No es posible prestarte dinero!',
+        });
+
         return 'No es posible prestarte dinero';
     } else {
         let saldoPendiente = valorDelPrestamo;
